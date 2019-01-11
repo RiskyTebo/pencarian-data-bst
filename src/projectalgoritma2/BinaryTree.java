@@ -11,7 +11,7 @@ package projectalgoritma2;
  */
 public class BinaryTree {
     
-    public Node root;
+    public Node root,tree;
     public String status, pesanAda, pesanGagal;
     
     public void BinaryTree()
@@ -44,34 +44,61 @@ public class BinaryTree {
         return root;
     }
     
-    public void cariDataTreeInOrder(Node root, int nilai, String newStatus)
+    public void cariDataTreeInOrder(Node root, int nilai, int data )
     {
         if(root != null)
         {
-            status = newStatus;
-            cariDataTreeInOrder(root.left, nilai, "Kiri");
+//            status = newStatus;
+            cariDataTreeInOrder(root.left, nilai, data);
             if(root.data == nilai)
             {
-                pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                if(nilai == data)
+                {
+                    status = "Root";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai > data)
+                {
+                    status = "Kanan";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai < data)
+                {
+                    status = "Kiri";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
             }
             else
             {
                 pesanGagal = "Maaf Data " + nilai + " Tidak Ditemukan di Binary Search Tree";
             }
-            cariDataTreeInOrder(root.right, nilai, "Kanan");
+            cariDataTreeInOrder(root.right, nilai, data);
         }
     }
     
-    public void cariDataTreePostOrder(Node root, int nilai, String newStatus)
+    public void cariDataTreePostOrder(Node root, int nilai, int data)
     {
         if(root != null)
         {
-            status = newStatus;
-            cariDataTreePostOrder(root.left, nilai, "Kiri");
-            cariDataTreePostOrder(root.right, nilai, "Kanan");
+            cariDataTreePostOrder(root.left, nilai, data);
+            cariDataTreePostOrder(root.right, nilai, data);
             if(root.data == nilai)
             {
-                pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                if(nilai == data)
+                {
+                    status = "Root";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai > data)
+                {
+                    status = "Kanan";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai < data)
+                {
+                    status = "Kiri";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
             }
             else
             {
@@ -80,21 +107,34 @@ public class BinaryTree {
         }
     }
     
-    public void cariDataTreePreOrder(Node root, int nilai, String newStatus)
+    public void cariDataTreePreOrder(Node root, int nilai, int data)
     {
         if(root != null)
         {
-            status = newStatus;
             if(root.data == nilai)
             {
-                pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                if(nilai == data)
+                {
+                    status = "Root";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai > data)
+                {
+                    status = "Kanan";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
+                else if(nilai < data)
+                {
+                    status = "Kiri";
+                    pesanAda = "Data " + nilai + " ditemukan di posisi " + status;
+                }
             }
             else
             {
                 pesanGagal = "Maaf Data " + nilai + " Tidak Ditemukan di Binary Search Tree";
             }
-            cariDataTreePreOrder(root.left, nilai, "Kiri");
-            cariDataTreePreOrder(root.right, nilai, "Kanan");
+            cariDataTreePreOrder(root.left, nilai, data);
+            cariDataTreePreOrder(root.right, nilai, data);
         }
     }
     

@@ -62,7 +62,7 @@ public class Main {
                 {
                     System.out.print("Masukkan Data yang ingin Anda Cari : ");
                     nilaiCari = input.nextInt();
-                    tree.cariDataTreeInOrder(tree.root, nilaiCari, "");
+                    tree.cariDataTreeInOrder(tree.root, nilaiCari, tree.root.data);
                     if(tree.pesanAda != null)
                     {
                         System.out.println(tree.pesanAda);
@@ -87,7 +87,7 @@ public class Main {
                 {
                     System.out.print("Masukkan Data yang ingin Anda Cari : ");
                     nilaiCari = input.nextInt();
-                    tree.cariDataTreePostOrder(tree.root, nilaiCari, "");
+                    tree.cariDataTreePostOrder(tree.root, nilaiCari, tree.root.data);
                     if(tree.pesanAda != null)
                     {
                         System.out.println(tree.pesanAda);
@@ -112,7 +112,7 @@ public class Main {
                 {
                     System.out.print("Masukkan Data yang ingin Anda Cari : ");
                     nilaiCari = input.nextInt();
-                    tree.cariDataTreePreOrder(tree.root, nilaiCari, "");
+                    tree.cariDataTreePreOrder(tree.root, nilaiCari, tree.root.data);
                     if(tree.pesanAda != null)
                     {
                         System.out.println(tree.pesanAda);
